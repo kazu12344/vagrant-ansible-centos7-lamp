@@ -20,8 +20,10 @@
   yum: pkg={{ item }} state=latest
   with_items:
     - mariadb
-    - mariadb-server
-    - python-mysqldb
+    - MariaDB-server
+    - MariaDB-client
+  notify:
+    - restart mysql
 
 - name: mariadb | Create databases
   sudo: yes
