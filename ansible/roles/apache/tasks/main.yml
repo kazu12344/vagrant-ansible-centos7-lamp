@@ -1,0 +1,19 @@
+---
+- name: Install Apache
+  sudo: yes
+  yum: pkg=httpd state=latest
+
+- shell: httpd -v
+  register: apache_version
+
+- name: Change default apache2.4 site
+  sudo: yes
+  template: src=vhost24.conf.tpl dest=/etc/httpd/conf.modules.d/00-vhosts.conf
+  notify: restart apache
+  when: apache_version.stdout.find('Apache/2.4.') != -1
+
+- name: Change default apache2.2 site
+  sudo: yes
+  template: src=vhost22.conf.tpl dest=dest=/etc/httpd/conf.modules.d/vhosts.conf
+  notify: restart apache
+  when: apache_version.stdout.find('Apache/2.2.') != -1
