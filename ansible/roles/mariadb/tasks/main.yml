@@ -25,12 +25,12 @@
   notify:
     - restart mysql
 
-- name: mariadb | Create databases
-  sudo: yes
-  mysql_db: name={{ database.db }} state=present
-  with_items: mariadb
+#- name: mariadb | Create databases
+#  sudo: yes
+#  mysql_db: name={{ database.db }} state=present
+#  with_items: mariadb
 
-- name: mariadb | Create users
-  sudo: yes
-  mysql_user: name={{ database.user }} password={{ database.pass }} priv={{ database.db }}.*:ALL state=present
-  with_items: mariadb
+#- name: mariadb | Create users
+#  sudo: yes
+#  mysql_user: name={{ database.user }} password={{ database.pass }} priv={{ database.db }}.*:ALL state=present
+#  with_items: mariadb
