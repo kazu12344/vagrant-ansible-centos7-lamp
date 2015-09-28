@@ -1,1 +1,0 @@
-{"virtualbox":{"/var/www/vhosts":{"create":true,"owner":"vagrant","group":"vagrant","mount_options":["dmode=777,fmode=766"],"guestpath":"/var/www/vhosts","hostpath":"/home/kazuhiro/projects/infrastructure","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/kazuhiro/projects/infrastructure/vagrant-ansible-centos7-lamp","disabled":false}}}
